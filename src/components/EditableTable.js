@@ -88,10 +88,14 @@ const EditableTable = () => {
         });
         setData(newData);
         setEditingKey('');
+        const res = await axios.put(baseURL, row);
+        console.log(res.status);
       } else {
         newData.push(row);
         setData(newData);
         setEditingKey('');
+        const res = await axios.put(baseURL, row);
+        console.log(res.status);
       }
     } catch (errInfo) {
       console.log('Validate Failed:', errInfo);
@@ -145,7 +149,7 @@ const EditableTable = () => {
       ...col,
       onCell: (record) => ({
         record,
-        inputType: col.dataIndex === 'bDate' ? 'number' : 'text',
+        inputType: col.dataIndex === 'bdate' ? 'number' : 'text',
         dataIndex: col.dataIndex,
         title: col.title,
         editing: isEditing(record),

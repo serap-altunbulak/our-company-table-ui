@@ -106,7 +106,7 @@ const EditableTable = () => {
     },
     {
       title: 'Birth Date',
-      dataIndex: 'bDate',
+      dataIndex: 'bdate',
       width: '25%',
       editable: true,
     },

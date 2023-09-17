@@ -38,6 +38,7 @@ const EditableCell = ({
     </td>
   );
 };
+
 const EditableTable = () => {
 
     const [post, setPost] = React.useState([]);
@@ -53,8 +54,10 @@ const EditableTable = () => {
     }, post);
 
     const arr = [];
+    var key = 1;
     post.forEach(element => {
-        arr.push(element);
+        arr.push(element.key = key);
+        key++;
     });
 
   const [form] = Form.useForm();
